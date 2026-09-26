@@ -8,6 +8,8 @@ const navigation = [
   ["Courses", "/courses"],
   ["Virtual class", "/virtual-class"],
   ["About", "/about"],
+  ["Blog", "/blog"],
+  ["Student portal", "/student"],
   ["LMS", "/lms"],
   ["Testimonials", "/testimonials"],
   ["Contact", "/contact"],

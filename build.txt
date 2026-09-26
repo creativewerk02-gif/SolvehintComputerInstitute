@@ -1,0 +1,22 @@
+   Γû▓ Next.js 15.5.26
+   - Environments: .env
+
+   Creating an optimized production build ...
+ Γ£ô Compiled successfully in 59s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/15) ...
+   Generating static pages (3/15) 
+   Generating static pages (7/15) 
+   Generating static pages (11/15) 
+ Γ£ô Generating static pages (15/15)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+> Build error occurred
+[Error: ENOENT: no such file or directory, open 'C:\Users\HP\Downloads\Printing Company in Lagos, Nigeria _ Digitalreality Print Limited\tsacademyonline.com\.next\static\pCf6xhcsb-CKMWN4u_itL\_ssgManifest.js'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\HP\\Downloads\\Printing Company in Lagos, Nigeria _ Digitalreality Print Limited\\tsacademyonline.com\\.next\\static\\pCf6xhcsb-CKMWN4u_itL\\_ssgManifest.js'
+}

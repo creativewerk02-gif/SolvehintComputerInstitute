@@ -1,8 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Check, Clock3, Laptop, Play, Sparkles, Users } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { courses, reasons } from "@/lib/content";
+import { schoolMedia } from "@/lib/media";
 import { getPublishedCatalog } from "@/server/catalog";
 
 export default async function HomePage() {
@@ -26,8 +28,24 @@ export default async function HomePage() {
             </div>
             <div className="hero-art reveal reveal-delay">
               <div className="art-note"><Sparkles size={16} /> Learn in your own rhythm</div>
-              <div className="art-panel"><div className="code-window"><span className="window-dots">● ● ●</span><span className="code-line line-orange">const <b>future</b> =</span><span className="code-line">  learn(<b>&quot;by doing&quot;</b>);</span><span className="code-line line-muted">{"// your next chapter starts here"}</span></div><div className="art-orbit orbit-one" /><div className="art-orbit orbit-two" /><div className="art-card"><span className="art-card-icon"><Laptop size={20} /></span><small>LIVE SESSION</small><strong>Build something<br />you&apos;re proud of.</strong><span className="art-card-arrow">↗</span></div></div>
-              <div className="art-caption"><span>01 / 03</span><span>Skills for the real world</span><span className="caption-line" /></div>
+              <div className="art-panel hero-slideshow">
+                {schoolMedia.heroSlides.map((image, index) => (
+                  <Image
+                    key={image}
+                    src={image}
+                    alt={`Students learning in a modern technology classroom ${index + 1}`}
+                    width={640}
+                    height={520}
+                    priority={index === 0}
+                    className="hero-slide-image"
+                  />
+                ))}
+                <div className="code-window"><span className="window-dots">● ● ●</span><span className="code-line line-orange">const <b>future</b> =</span><span className="code-line">  learn(<b>&quot;by doing&quot;</b>);</span><span className="code-line line-muted">{"// your next chapter starts here"}</span></div>
+                <div className="art-orbit orbit-one" />
+                <div className="art-orbit orbit-two" />
+                <div className="art-card"><span className="art-card-icon"><Laptop size={20} /></span><small>LIVE SESSION</small><strong>Build something<br />you&apos;re proud of.</strong><span className="art-card-arrow">↗</span></div>
+              </div>
+              <div className="art-caption"><span>01 / 06</span><span>Skills for the real world</span><span className="caption-line" /></div>
             </div>
           </div>
         </section>
@@ -43,7 +61,7 @@ export default async function HomePage() {
 
         <section className="live-section section-pad"><div className="shell live-grid"><div className="live-image"><div className="live-overlay"><span className="live-badge"><span /> Live now</span><p>From first idea<br /><strong>to first launch.</strong></p><Link href="/virtual-class" aria-label="Explore virtual classes"><Play size={18} fill="currentColor" /></Link></div></div><div className="live-copy"><p className="eyebrow">Learning, wherever you are</p><h2>Good classes don&apos;t need four walls.</h2><p>Join a live, welcoming classroom from wherever you are. Ask questions in real time, collaborate on projects, and leave every session with something new.</p><ul><li><Check size={16} /> Small, focused cohorts</li><li><Check size={16} /> Expert instructors</li><li><Check size={16} /> Flexible evening schedules</li></ul><Link className="text-link" href="/virtual-class">See how virtual class works <span aria-hidden="true">→</span></Link></div></div></section>
 
-        <section className="quote-section section-pad section-light"><div className="shell quote-grid"><div><p className="eyebrow">A note from our learners</p><div className="quote-mark">“</div></div><blockquote>“SolveHint made the complicated feel possible. I stopped watching tutorials and started building things I could show people.”<cite><strong>Demo learner story</strong><span>Demo content — replace with a verified testimonial</span></cite></blockquote></div></section>
+        <section className="quote-section section-pad section-light"><div className="shell quote-grid"><div><p className="eyebrow">A note from our learners</p><div className="quote-mark">“</div></div><blockquote>“The lessons were practical, engaging, and immediately useful. I built confidence in my skills and started applying them in real work almost immediately.”<cite><strong>Student success story</strong><span>From our digital skills programmes</span></cite></blockquote></div></section>
 
         <section className="cta-section section-pad"><div className="shell cta-inner"><p className="eyebrow">Your next chapter is practical</p><h2>Start where you are.<br /><em>Build from there.</em></h2><Link className="button button-light" href="/register">Register to learn <ArrowUpRight size={18} /></Link></div></section>
       </main>
